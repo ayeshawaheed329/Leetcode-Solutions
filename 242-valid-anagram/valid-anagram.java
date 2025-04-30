@@ -6,9 +6,11 @@ class Solution {
             return false;
         }
         int[] charFreq = new int[26];
-        for(int i=0; i<a_len; i++){
-            charFreq[s.charAt(i) - 'a']++;
-            charFreq[t.charAt(i) - 'a']--;
+        for(char c: s.toCharArray()){
+            charFreq[c - 'a']++;
+        }
+        for(char c: t.toCharArray()){
+            charFreq[c - 'a']--;
         }
 
         for(int freq : charFreq){
