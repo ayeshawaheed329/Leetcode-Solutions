@@ -10,7 +10,10 @@ var maxProfit = function(prices) {
         if(price < min){
             min = price;
         }else {
-            maxProfit = Math.max(maxProfit, price - min); 
+            let profit = price - min;
+            if(profit > maxProfit){
+                maxProfit = profit;
+            }
         }
     }
     return maxProfit;
